@@ -1,0 +1,45 @@
+/* CSS Entry Point */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+img{
+	width: 200px;
+	height: 200px;
+	cursor: pointer;
+}
+
+.app{
+	width: 1200px;
+	padding: 25px;
+	height: 700px;
+	margin: auto;
+	background-color: lighten(grey, 30%);
+	.player-info{
+		margin: 20px 0;
+	}
+	.nic-cage-picker{
+		margin: 20px 0;
+		div{
+			display: inline-block;
+			margin: 20px 10px;
+		}
+	}
+}
+
+button{
+	font-size: 1.5em;
+	padding: 5px 10px;
+	border-radius: 5px;
+	margin: 10px 0;
+	cursor: pointer;
+	background-color: white;
+	border: 1px solid black;
+	&:hover{
+		background-color: black;
+		color: white;
+	}
+}
