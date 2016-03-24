@@ -52,8 +52,10 @@ var thePlayers = [];
 selectNicolasCage.onclick = function addPlayer (){
 	if(thePlayers.length === 0){
 		playerInfo.innerHTML = "The Real Nicolas Cage";
+		selectNicolasCage.className = "userSelected";
 	}else{
 		opponentInfo.innerHTML = "The Real Nicolas Cage";
+		selectNicolasCage.className = "computerPlayerSelected";
 	}
 
 	thePlayers.push(realNicolasCage);
@@ -64,8 +66,10 @@ selectNicolasCage.onclick = function addPlayer (){
 selectNationalTreasure.onclick = function addPlayer (){
 	if(thePlayers.length === 0){
 		playerInfo.innerHTML = "National Treasure Nicolas Cage";
+		selectNationalTreasure.className = "userSelected";
 	}else{
 		opponentInfo.innerHTML = "National Treasure Nicolas Cage";
+		selectNationalTreasure.className = "computerPlayerSelected";
 	}
 
 	thePlayers.push(nationalTreasureNicolasCage);
@@ -74,8 +78,10 @@ selectNationalTreasure.onclick = function addPlayer (){
 selectLordOfWar.onclick = function addPlayer (){
 	if(thePlayers.length === 0){
 		playerInfo.innerHTML = "Lord of War Nicolas Cage";
+		selectLordOfWar.className = "userSelected";
 	}else{
 		opponentInfo.innerHTML = "Lord of War Nicolas Cage";
+		selectLordOfWar.className = "computerPlayerSelected";
 	}
 
 	thePlayers.push(lordOfWarNicolasCage);
@@ -84,8 +90,10 @@ selectLordOfWar.onclick = function addPlayer (){
 selectGhost.onclick = function addPlayer (){
 	if(thePlayers.length === 0){
 		playerInfo.innerHTML = "Ghost Rider Nicolas Cage";
+		selectGhost.className = "userSelected";
 	}else{
 		opponentInfo.innerHTML = "Ghost Rider Nicolas Cage";
+		selectGhost.className = "computerPlayerSelected";
 	}
 
 	thePlayers.push(ghostRiderNicolasCage);
@@ -94,8 +102,10 @@ selectGhost.onclick = function addPlayer (){
 selectWicker.onclick = function addPlayer (){
 	if(thePlayers.length === 0){
 		playerInfo.innerHTML = "Wicker Man Nicolas Cage";
+		selectWicker.className = "userSelected";
 	}else{
 		opponentInfo.innerHTML = "Wicker Man Nicolas Cage";
+		selectWicker.className = "computerPlayerSelected";
 	}
 
 	thePlayers.push(wickerManNicolasCage);
@@ -153,6 +163,12 @@ button.onclick = function updateScore (){
 		opponentInfo.innerHTML = "";
 		currentUserScore = 100;
 		currentComputerNicScore = 100;
+
+		var userSelectedPlayer = document.querySelectorAll('img');
+
+		[].forEach.call(userSelectedPlayer, function(anImg) {
+		    anImg.className = "";
+		});
 	}
 
 	if (currentUserScore <= 0 ) {
