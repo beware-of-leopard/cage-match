@@ -116,9 +116,12 @@ selectWicker.onclick = function addPlayer (){
 
 var userScore = document.querySelector('#userScore');
 var computerNicScore = document.querySelector('#computerNicScore');
+var roundNumber = document.querySelector('#round');
 
 
 var button = document.querySelector('button');
+var gameResults = document.querySelector('.game-results');
+var resetButton = document.querySelector('#reset');
 
 var currentUserScore = 100;
 var currentComputerNicScore = 100;
@@ -128,6 +131,7 @@ var round =0;
 button.onclick = function updateScore (){
 
 	round+=1;
+	roundNumber.innerHTML = `Round ${round}:`
 	
 	function userStatus(){
 		if (thePlayers[0].dodgeAbility() >= thePlayers[1].attackAbility()){
@@ -136,7 +140,7 @@ button.onclick = function updateScore (){
 				
 		}else{
 			currentUserScore -= thePlayers[1].attackAbility();
-			userScore.innerHTML = `After Round: ${round}, ${thePlayers[0].name}'s remaining hit points ${currentUserScore}`;
+			userScore.innerHTML = `${thePlayers[0].name}'s remaining hit points ${currentUserScore}`;
 		}
 	}
 	userStatus();
@@ -149,20 +153,34 @@ button.onclick = function updateScore (){
 				
 		}else{
 			currentComputerNicScore -= thePlayers[0].attackAbility();
-			computerNicScore.innerHTML = `After Round: ${round}, ${thePlayers[1].name}'s remaining hit points ${currentComputerNicScore}`;
+			computerNicScore.innerHTML = `${thePlayers[1].name}'s remaining hit points ${currentComputerNicScore}`;
 		}
 	}
 	computerNicStatus();
 	
 
-	function reset(){
+	
+
+	if (currentUserScore <= 0 ) {
+		gameResults.innerHTML = `Better luck next time! This CAGE MATCH goes to the enemy, ${thePlayers[1].name}`;
+
+	}else if(currentComputerNicScore <= 0){
+		gameResults.innerHTML = `You and ${thePlayers[0].name} win this CAGE MATCH!`;
+	}
+};
+
+
+resetButton.onclick = function reset(){
 		thePlayers = [];
 		userScore.innerHTML = "";
 		computerNicScore.innerHTML = "";
 		playerInfo.innerHTML = "";
 		opponentInfo.innerHTML = "";
+		roundNumber.innerHTML = "";
 		currentUserScore = 100;
 		currentComputerNicScore = 100;
+		gameResults.innerHTML = "";
+		round = 0;
 
 		var userSelectedPlayer = document.querySelectorAll('img');
 
@@ -170,17 +188,6 @@ button.onclick = function updateScore (){
 		    anImg.className = "";
 		});
 	}
-
-	if (currentUserScore <= 0 ) {
-		alert(`This CAGE MATCH goes to the enemy, ${thePlayers[1].name}`);
-		reset();
-
-	}else if(currentComputerNicScore <= 0){
-		alert(`You and ${thePlayers[0].name} win this CAGE MATCH!`);
-		reset();
-	}
-};
-
 
 
 
