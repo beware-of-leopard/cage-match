@@ -7,44 +7,45 @@
 <body>
   <div class="app">
   <h1>CAGE MATCH</h1>
+  <div>Two Cages enter the cage...one Cage leaves...the cage. Cage.</div>
   	<div class="nic-cage-picker">
   		<h2>1) Click the Nicolas Cage you want to fight with.</h2>
   		<h2>2) Click your Nicolas Cage opponent.</h2>
   		<div>
-  			<h4>The Real Nicolas Cage</h4>
-  			<img id="nicolas-cage" src="../images/NicolasCage.png">
+  			<img id="nicolas-cage" data-name="The Real Nicolas Cage" src="../images/NicolasCage.png">
+        <h4>The Real Nicolas Cage</h4>
   			<ul>
   				<li>Strengths: Ability to talk at random volumns</li>
   				<li>Weaknesses: Unknown</li>
   			</ul>
   		</div>
   		<div>
-  			<h4>National Treasure Nicolas Cage</h4>
-  			<img id="national-treasure" src="../images/NationalTreasure.png">
+  			<img id="national-treasure" data-name="National Treasure Nicolas Cage" src="../images/NationalTreasure.png">       
+        <h4>National Treasure Nicolas Cage</h4>
   			<ul>
   				<li>Strengths: Ability to talk at random volumns, franchising, Nancy Drew-ing, kidnapping the president</li>
   				<li>Weaknesses: Occasionally kidnaps the president</li>
   			</ul>
   		</div>
   		<div>
-  			<h4>Lord of War Nicolas Cage</h4>
-  			<img id="lord-of-war" src="../images/LordOfWar.png">
+  			<img id="lord-of-war" data-name="Lord of War Nicolas Cage" src="../images/LordOfWar.png">
+        <h4>Lord of War Nicolas Cage</h4>
   			<ul>
   				<li>Strengths: Ability to talk at random volumns, easy access to powerful weaponry</li>
   				<li>Weaknesses: Unknown</li>
   			</ul>
   		</div>
   		<div>
-  			<h4>Ghost Rider Nicolas Cage</h4>
-  			<img id="ghost-rider" src="../images/GhostRider.png">
-  			<ul>
-  				<li>Strengths: Ability to talk at random volumns, appears to be on fire, great MPG, love interest of Eva Mendes (I think. Only saw the trailer)</li>
+  			<img id="ghost-rider" data-name="Ghost Rider Nicolas Cage" src="../images/GhostRider.png">
+        <h4>Ghost Rider Nicolas Cage</h4>
+        <ul>
+  				<li>Strengths: Ability to talk at random volumns, appears to be on fire, great MPG, love interest of Eva Mendes based on the trailer</li>
   				<li>Weaknesses: Appears to be on fire, appeared in Ghost Rider</li>
   			</ul>
   		</div>
   		<div>
-  			<h4>Wicker Man Nicolas Cage</h4>
-  			<img id="wicker-man" src="../images/WickerMan.png">
+  			<img id="wicker-man" data-name="Wicker Man Nicolas Cage" src="../images/WickerMan.png">
+        <h4>Wicker Man Nicolas Cage</h4>
   			<ul>
   				<li>Strengths: Ability to talk at random volumns</li>
   				<li>Weaknesses: Bees</li>
@@ -52,8 +53,7 @@
   		</div>
   	</div>
   	<h3 id="round"></h3>
-  	<div id="userScore"></div>
-  	<div id="computerNicScore"></div>
+  	<div id="the-scores"></div>
 	<button>Attack</button>
 	<div class="player-info">
 		<h3>You selected:</h3>
@@ -66,7 +66,7 @@
 	</div>
 
 	<div class="game-results-container">
-		<h3>Results</h3>
+		<h2>Results</h2>
 		<div class="game-results"></div>
 		<button id="reset">Play Again</button>
 	</div>
