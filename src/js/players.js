@@ -20,7 +20,7 @@ class NicolasCage {
 
 
 
-var realNicolasCage = new NicolasCage(10, 2);
+var realNicolasCage = new NicolasCage(10, 6);
 realNicolasCage.name = "The Real Nicolas Cage";
 
 
@@ -33,7 +33,7 @@ lordOfWarNicolasCage.name = "Lord of War Nicolas Cage";
 var wickerManNicolasCage = new NicolasCage(15, 0);
 wickerManNicolasCage.name = "Wicker Man Nicolas Cage";
 
-var ghostRiderNicolasCage = new NicolasCage(18, 8);
+var ghostRiderNicolasCage = new NicolasCage(18, 5);
 ghostRiderNicolasCage.name = "Ghost Rider Nicolas Cage";
 
 export default allPossiblePlayers;
