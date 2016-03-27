@@ -2,65 +2,7 @@
 
 import $ from 'jquery';
 
-//////improvements roadmap
-
-/////place data attribute either using .data(element, key, value) or manually in html
-
-/////get data attribute's value of clicked item
-
-/////put all possible players into array
-
-/////filter array for the player whose name value is equal to the value of clicked on item
-
-/////generalize the addPlayer function, make it a method in the constructor, and call for player that comes through the filter
-
-var allPossiblePlayers = [];
-
-class NicolasCage {
-	constructor(attackMultiplier, dodgeMultiplier){
-		this.attackMultiplier = attackMultiplier;
-		this.dodgeMultiplier = dodgeMultiplier;
-		this.actingAbility = "unknown";
-		this.height = "6 feet tall";
-		this.talksAtRandomVolumns = true;
-		this.attackAbility = function(){
-			return Math.floor(Math.random() * this.attackMultiplier);
-		};
-		this.dodgeAbility = function(){
-			return Math.random() * this.dodgeMultiplier;
-		};
-		this.toArray = function(){allPossiblePlayers.push(this);};
-		this.toArray();
-	}
-}
-
-
-
-var realNicolasCage = new NicolasCage(10, 2);
-realNicolasCage.name = "The Real Nicolas Cage";
-
-
-var nationalTreasureNicolasCage = new NicolasCage(10, 5);
-nationalTreasureNicolasCage.name = "National Treasure Nicolas Cage";
-
-var lordOfWarNicolasCage = new NicolasCage(25, 2);
-lordOfWarNicolasCage.name = "Lord of War Nicolas Cage";
-
-var wickerManNicolasCage = new NicolasCage(15, 0);
-wickerManNicolasCage.name = "Wicker Man Nicolas Cage";
-
-var ghostRiderNicolasCage = new NicolasCage(18, 8);
-ghostRiderNicolasCage.name = "Ghost Rider Nicolas Cage";
-// console.log(allPossiblePlayers);
-
-//////can be refactored to use data-madeupname = "data-here" and jquery's data() method 
-//with an event listener on a container instead of individual img's
-
-// var selectNicolasCage = document.querySelector('#nicolas-cage');
-// var selectNationalTreasure = document.querySelector('#national-treasure');
-// var selectLordOfWar = document.querySelector('#lord-of-war');
-// var selectGhost = document.querySelector('#ghost-rider');
-// var selectWicker = document.querySelector('#wicker-man');
+import allPossiblePlayers from './players';
 
 
 var playerInfo = document.querySelector('.player-info div');
@@ -85,71 +27,6 @@ $( ".nic-cage-picker" ).on( "click", "img", function( event ) {
 	}
 });
 
-    
-
-// selectNicolasCage.onclick = function addPlayer (){
-// 	if(thePlayers.length === 0){
-// 		playerInfo.innerHTML = "The Real Nicolas Cage";
-// 		selectNicolasCage.className = "userSelected";
-// 	}else{
-// 		opponentInfo.innerHTML = "The Real Nicolas Cage";
-// 		selectNicolasCage.className = "computerPlayerSelected";
-// 	}
-
-// 	thePlayers.push(realNicolasCage);
-
-// };
-
-// selectNationalTreasure.onclick = function addPlayer (){
-// 	if(thePlayers.length === 0){
-// 		playerInfo.innerHTML = "National Treasure Nicolas Cage";
-// 		selectNationalTreasure.className = "userSelected";
-// 	}else{
-// 		opponentInfo.innerHTML = "National Treasure Nicolas Cage";
-// 		selectNationalTreasure.className = "computerPlayerSelected";
-// 	}
-
-// 	thePlayers.push(nationalTreasureNicolasCage);
-// };
-
-// selectLordOfWar.onclick = function addPlayer (){
-// 	if(thePlayers.length === 0){
-// 		playerInfo.innerHTML = "Lord of War Nicolas Cage";
-// 		selectLordOfWar.className = "userSelected";
-// 	}else{
-// 		opponentInfo.innerHTML = "Lord of War Nicolas Cage";
-// 		selectLordOfWar.className = "computerPlayerSelected";
-// 	}
-
-// 	thePlayers.push(lordOfWarNicolasCage);
-// };
-
-// selectGhost.onclick = function addPlayer (){
-// 	if(thePlayers.length === 0){
-// 		playerInfo.innerHTML = "Ghost Rider Nicolas Cage";
-// 		selectGhost.className = "userSelected";
-// 	}else{
-// 		opponentInfo.innerHTML = "Ghost Rider Nicolas Cage";
-// 		selectGhost.className = "computerPlayerSelected";
-// 	}
-
-// 	thePlayers.push(ghostRiderNicolasCage);
-// };
-
-// selectWicker.onclick = function addPlayer (){
-// 	if(thePlayers.length === 0){
-// 		playerInfo.innerHTML = "Wicker Man Nicolas Cage";
-// 		selectWicker.className = "userSelected";
-// 	}else{
-// 		opponentInfo.innerHTML = "Wicker Man Nicolas Cage";
-// 		selectWicker.className = "computerPlayerSelected";
-// 	}
-
-// 	thePlayers.push(wickerManNicolasCage);
-// };
-
-
-
 
 var $theScores = $(document.querySelector('#the-scores'));
 var roundNumber = document.querySelector('#round');
@@ -160,8 +37,8 @@ var $gameResultsContainer = $(document.querySelector('.game-results-container'))
 var gameResults = document.querySelector('.game-results');
 var resetButton = document.querySelector('#reset');
 
-var currentUserScore = 100;
-var currentComputerNicScore = 100;
+var currentUserScore = 50;
+var currentComputerNicScore = 50;
 
 var round =0;
 
@@ -212,8 +89,8 @@ resetButton.onclick = function reset(){
 		playerInfo.innerHTML = "";
 		opponentInfo.innerHTML = "";
 		roundNumber.innerHTML = "";
-		currentUserScore = 100;
-		currentComputerNicScore = 100;
+		currentUserScore = 50;
+		currentComputerNicScore = 50;
 		gameResults.innerHTML = "";
 		round = 0;
 		$gameResultsContainer.css("display", "none");

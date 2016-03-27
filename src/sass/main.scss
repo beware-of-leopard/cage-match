@@ -11,15 +11,17 @@ img{
 	width: 100%;
 	height: 200px;
 	cursor: pointer;
+	border: 8px solid black;
 }
 
 .app{
 	width: 1300px;
 	padding: 25px;
-	// height: 700px;
 	margin: auto;
-	// background-color: lighten(grey, 30%);
-	position: relative;
+	border-top: 15px dashed black;
+	h1{
+		font-size: 4em;
+	}
 	.player-info{
 		margin: 20px 0;
 	}
@@ -31,21 +33,23 @@ img{
 			margin: 20px 10px;
 			width: 220px;
 			vertical-align: top;
-			li{
-				margin-bottom: 10px;
-			}
 		}
+	}
+	.score-info{
+		text-align: center;
+		font-size: 2em;
 	}
 }
 
 button{
-	font-size: 1.5em;
-	padding: 5px 10px;
+	font-size: 2em;
+	padding: 10px 20px;
 	border-radius: 5px;
-	margin: 10px 0;
+	width: 100%;
+	margin: 20px 0;
 	cursor: pointer;
 	background-color: white;
-	border: 1px solid black;
+	border: 3px solid black;
 	&:hover{
 		background-color: black;
 		color: white;
@@ -53,11 +57,11 @@ button{
 }
 
 .userSelected{
-	border: 4px solid green;
+	border: 8px solid lighten(green, 15%);
 }
 
 .computerPlayerSelected{
-	border: 4px solid red;
+	border: 8px solid red;
 }
 
 
@@ -81,7 +85,7 @@ button{
 		padding: 20px;
 	}
 	button:hover{
-		border: 2px solid white;
+		border: 8px solid white;
 	}
 
 }
